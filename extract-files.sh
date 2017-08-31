@@ -15,6 +15,14 @@ fi
 
 set -e
 
+function blob_fixup() {
+    case "${1}" in
+        vendor/lib/libmmcamera2_stats_algorithm.so)
+            "${PATCHELF}" --add-needed libshim_mmcamera.so "${2}"
+            ;;
+    esac
+}
+
 export DEVICE=onyx
 export DEVICE_COMMON=msm8974-common
 export VENDOR_DEVICE=oneplus

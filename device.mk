@@ -46,7 +46,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8974
+    camera.msm8974 \
+    libshim_mmcamera
 
 # Doze
 PRODUCT_PACKAGES += \
