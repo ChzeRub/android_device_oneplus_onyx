@@ -58,9 +58,6 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
-# RPC
-TARGET_NO_RPC := true
-
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
