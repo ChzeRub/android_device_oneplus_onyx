@@ -58,9 +58,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # Init
 SOONG_CONFIG_OPPO_MSM8974_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_onyx
 
-# Media
-TARGET_USES_MEDIA_EXTENSIONS := true
-
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
