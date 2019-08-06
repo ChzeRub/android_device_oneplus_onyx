@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# Recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Call the proprietary setup
 $(call inherit-product, vendor/oneplus/onyx/onyx-vendor.mk)
 
