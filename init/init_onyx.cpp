@@ -26,15 +26,14 @@
  */
 
 #include <stdlib.h>
+#include <init/DeviceLibinit.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
-#include "init_msm8974.h"
-
-void init_target_properties()
+void vendor_load_device_properties()
 {
     std::string platform, rf_version, device;
 
