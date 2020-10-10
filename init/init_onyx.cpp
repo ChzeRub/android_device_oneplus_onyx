@@ -1,5 +1,7 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
+                 2020, The LineageOS Project
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -25,41 +27,36 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdlib.h>
-#include <init/DeviceLibinit.h>
+#include <android-base/logging.h>
+#include <android-base/properties.h>
 
+#include "DeviceLibinit.h"
+#include "init_msm8974.h"
 #include "vendor_init.h"
-#include "property_service.h"
-#include "log.h"
-#include "util.h"
 
 void vendor_load_device_properties()
 {
     std::string platform, rf_version, device;
 
-    platform = property_get("ro.board.platform");
-    if (platform != ANDROID_TARGET)
-        return;
-
-    rf_version = property_get("ro.boot.rf_version");
+    rf_version = android::base::GetProperty("ro.boot.rf_version", "");
 
     if (rf_version == "101") {
         /* China */
         property_override("ro.product.model", "ONE E1001");
-        property_set("ro.rf_version", "TDD_FDD_Ch_All");
+        property_override("ro.rf_version", "TDD_FDD_Ch_All");
     } else if (rf_version == "102") {
         /* Asia/Europe */
         property_override("ro.product.model", "ONE E1003");
-        property_set("ro.rf_version", "TDD_FDD_Eu");
+        property_override("ro.rf_version", "TDD_FDD_Eu");
     } else if (rf_version == "103"){
         /* America */
         property_override("ro.product.model", "ONE E1005");
-        property_set("ro.rf_version", "TDD_FDD_Am");
+        property_override("ro.rf_version", "TDD_FDD_Am");
     } else if (rf_version == "107"){
         /* China CTCC Version */
         property_override("ro.product.model", "ONE E1000");
-        property_set("ro.rf_version", "TDD_FDD_ALL_OPTR");
+        property_override("ro.rf_version", "TDD_FDD_ALL_OPTR");
     }
-    device = property_get("ro.product.device");
-    INFO("Found rf_version : %s setting build properties for %s device\n", rf_version.c_str(), device.c_str());
+    device = android::base::GetProperty("ro.product.device", "");
+    LOG(INFO) << "Found rf_version : %s setting build properties for %s device\n", rf_version.c_str(), device.c_str();
 }
