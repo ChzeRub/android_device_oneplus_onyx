@@ -42,6 +42,3 @@ BUILD_FINGERPRINT := OnePlus/OnePlus/OnePlus:6.0.1/MMB29M/10281213:user/release-
 
 TARGET_VENDOR := oneplus
 TARGET_VENDOR_PRODUCT_NAME := onyx
-
-# Unofficial build ID
-TARGET_UNOFFICIAL_BUILD_ID := YumeMichi

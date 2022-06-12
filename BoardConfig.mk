@@ -49,7 +49,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CONFIG := onyx_defconfig
+TARGET_KERNEL_CONFIG := lineage_onyx_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/onyx
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 TARGET_KERNEL_ADDITIONAL_FLAGS := HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
