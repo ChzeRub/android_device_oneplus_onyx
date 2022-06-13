@@ -45,24 +45,15 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2147483648
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12611874816
 
-# Workaround for factory issue
-BOARD_VOLD_CRYPTFS_MIGRATE := true
-
 # FM
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
-
-# Fonts
-EXTENDED_FONT_FOOTPRINT := true
 
 # Init
 SOONG_CONFIG_OPPO_MSM8974_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_onyx
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-
-# Protobuf-c
-PROTOBUF_SUPPORTED := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
@@ -73,8 +64,5 @@ TARGET_NO_RPC := true
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
-
-# SnapDragon LLVM Compiler
-TARGET_USE_SDCLANG := true
 
 -include vendor/oneplus/onyx/BoardConfigVendor.mk
