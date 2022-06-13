@@ -227,5 +227,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wcnss_service
 
+# Call the proprietary setup
+$(call inherit-product, vendor/oneplus/onyx/onyx-vendor.mk)
+
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)

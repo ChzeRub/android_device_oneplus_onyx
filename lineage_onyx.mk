@@ -21,9 +21,6 @@ $(call inherit-product, device/oneplus/onyx/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Call the proprietary setup
-$(call inherit-product-if-exists, vendor/oneplus/onyx/onyx-vendor.mk)
-
 PRODUCT_NAME := lineage_onyx
 PRODUCT_DEVICE := onyx
 PRODUCT_MANUFACTURER := OnePlus
