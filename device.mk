@@ -52,10 +52,6 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
-# Keylayouts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/synaptics-rmi.kl:system/usr/keylayout/synaptics-rmi.kl
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
