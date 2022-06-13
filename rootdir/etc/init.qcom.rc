@@ -16,8 +16,10 @@
 
 import /vendor/etc/init/hw/init.qcom-common.rc
 
-on init
-    symlink /sdcard /storage/sdcard0
+on fs
+    mount_all /vendor/etc/fstab.qcom
+    restorecon_recursive /persist
+    setprop ro.crypto.fuse_sdcard true
 
 on post-fs
     # Reverse Keys
@@ -35,13 +37,6 @@ on post-fs
     chmod 0660 /proc/tri-state-key/keyCode_middle
     chmod 0660 /proc/tri-state-key/keyCode_bottom
 
-on fs
-    mount_all /vendor/etc/fstab.qcom
-    restorecon_recursive /persist
-    mkdir /persist/data 0700 system system
-    mkdir /persist/data/sfs 0700 system system
-    mkdir /persist/data/tz 0700 system system
-
 service ppd /system/bin/mm-pp-daemon
     class late_start
     disabled
@@ -54,40 +49,6 @@ on property:init.svc.surfaceflinger=stopped
 
 on property:init.svc.surfaceflinger=running
     start ppd
-
-# diag logging
-service diag_mdlog_start /system/bin/diag_mdlog
-    class late_start
-    user shell
-    group system qcom_diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service diag_mdlog_stop /system/bin/diag_mdlog -k
-    class late_start
-    user shell
-    group system qcom_diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service qlogd /system/xbin/qlogd
-    class main
-    disabled
-on property:persist.sys.qlogd=1
-    start qlogd
-on property:persist.sys.qlogd=0
-    stop qlogd
-
-service ssr_diag /system/bin/ssr_diag
-    class late_start
-    disabled
-    user system
-    group system
-
-service pfm /system/bin/pfm
-    class late_start
-    user system
-    group system drmrpc mount
 
 service ril-daemon1 /system/bin/rild -c 2
     class main
