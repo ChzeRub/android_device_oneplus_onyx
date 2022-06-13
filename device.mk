@@ -50,11 +50,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OneplusDoze
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
