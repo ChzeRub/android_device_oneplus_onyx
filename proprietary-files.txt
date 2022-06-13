@@ -79,11 +79,5 @@ vendor/lib/libchromatix_s5k3m2_zsl.so
 # Camera firmware
 etc/firmware/cpp_firmware_v1_2_0.fw
 
-# Postprocessing
-bin/mm-pp-daemon
-vendor/lib/libdisp-aba.so
--vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
-
 # Sensors
 etc/sensors/sensor_def_qcomdev.conf
