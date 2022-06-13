@@ -86,6 +86,4 @@ vendor/lib/libdisp-aba.so
 vendor/lib/libmm-abl-oem.so
 
 # Sensors
-etc/firmware/tp/15055/15055_FW_S3508_Tpk.img
-etc/firmware/tp/15055/15055_Limit_Tpk.img
 etc/sensors/sensor_def_qcomdev.conf
