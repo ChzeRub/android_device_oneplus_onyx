@@ -23,15 +23,14 @@ $(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
 
 PRODUCT_NAME := lineage_onyx
 PRODUCT_DEVICE := onyx
+PRODUCT_BRAND := oneplus
 PRODUCT_MANUFACTURER := OnePlus
+PRODUCT_MODEL := E1003
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-PRODUCT_BRAND := OnePlus
-TARGET_VENDOR := oneplus
-TARGET_VENDOR_PRODUCT_NAME := onyx
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="OnePlus-user 6.0.1 MMB29M 10281213 release-keys"
+    PRIVATE_BUILD_DESC="OnePlus-user 6.0.1 MMB29M 10281213 release-keys" \
+    PRODUCT_NAME=onyx
 
 BUILD_FINGERPRINT := OnePlus/OnePlus/OnePlus:6.0.1/MMB29M/10281213:user/release-keys
