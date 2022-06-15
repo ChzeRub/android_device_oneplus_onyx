@@ -95,6 +95,10 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# Encryption
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_LEGACY_HW_DISK_ENCRYPTION := true
+
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
