@@ -303,3 +303,7 @@ etc/firmware/venus.mdt:vendor/firmware/venus.mdt
 # WiFi - Pinned blobs from bacon
 -lib/libwpa_qmi_eap_proxy.so:vendor/lib/libwpa_qmi_eap_proxy.so|bc3e47c756106d43903beacfa726ee4f0bc369d3
 lib/libwcnss_qmi.so:vendor/lib/libwcnss_qmi.so|98fb6166d7f23f6263d6224fe6d239656140e1d3
+
+# Wifi firmware
+vendor/firmware/wlan/prima/WCNSS_cfg.dat
+vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin

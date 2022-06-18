@@ -300,19 +300,18 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy \
     dhcpcd.conf \
     libwpa_client \
     hostapd \
+    p2p_supplicant_overlay.conf \
     wpa_supplicant \
     wpa_supplicant.conf \
-    wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf
+    wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
     wcnss_service
