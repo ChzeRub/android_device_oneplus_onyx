@@ -46,6 +46,9 @@
         <device name="SND_DEVICE_OUT_SPEAKER" backend="speaker" />
         <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" backend="speaker-and-headphones" />
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="speaker" />
+
+        <device name="SND_DEVICE_OUT_SPEAKER" backend="i2s" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="i2s" />
     </backend_names>
 
     <pcm_ids>
