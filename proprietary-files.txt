@@ -278,6 +278,7 @@ vendor/lib/libxml.so|d93c3ea398ea9e2bc1813f3511e9ae4f1c6925ea
 
 # Sensors
 bin/sensors.qcom:vendor/bin/sensors.qcom
+etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.msm8974.so
 vendor/lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
