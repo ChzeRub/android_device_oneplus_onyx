@@ -197,11 +197,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.onyx
 
-# Limit dex2oat threads to improve thermals
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-threads=2 \
-    dalvik.vm.image-dex2oat-threads=4
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sysfs
@@ -299,7 +294,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
 
-
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy \
     dhcpcd.conf \
@@ -316,15 +310,6 @@ PRODUCT_PACKAGES += \
 # Do not spin up a separate process for the network stack, use an in-process APK.
 PRODUCT_PACKAGES += InProcessNetworkStack
 PRODUCT_PACKAGES += com.android.tethering.inprocess
-
-# Dalvik heap
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
 
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
