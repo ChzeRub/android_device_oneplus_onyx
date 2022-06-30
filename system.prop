@@ -78,9 +78,6 @@ ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/config
 ro.vendor.extension_library=libqti-perfd-client.so
 drm.service.enabled=true
 
-# QMI
-persist.data.qmi.adb_logmask=0
-
 # Recovery
 persist.vendor.recovery_update=false
 
