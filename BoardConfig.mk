@@ -46,6 +46,7 @@ TARGET_USES_64_BIT_BINDER := true
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
@@ -53,6 +54,8 @@ BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := lineage_onyx_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/onyx
+TARGET_KERNEL_CLANG_COMPILE := false
+TARGET_CUSTOM_DTBTOOL := dtbToolLineage
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -195,5 +198,9 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+
+#PREBUILT BROKEN ELF LIBRARIES
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_DUP_RULES := true
 
 -include vendor/oneplus/onyx/BoardConfigVendor.mk
